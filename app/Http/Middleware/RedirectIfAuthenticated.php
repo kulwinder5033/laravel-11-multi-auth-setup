@@ -18,7 +18,7 @@ class RedirectIfAuthenticated
     public function handle(Request $request, Closure $next, string ...$guards): Response|JsonResponse
     {
         $guards = empty($guards) ? [null] : $guards;
-
+        
         foreach ($guards as $guard) {
 
             if (Auth::guard($guard)->check()) {
@@ -27,7 +27,6 @@ class RedirectIfAuthenticated
                         'message' => 'Authenticated users cannot access this resource.'
                     ], 403);
                 }
-
                 if (Auth::guard($guard)->name == "superadmin") {
                     return redirect("superadmin");
                 } else {

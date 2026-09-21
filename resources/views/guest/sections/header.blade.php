@@ -1,92 +1,70 @@
-<div class="mb-0" id="home">
-    <!--begin::Wrapper-->
-    <div class="bgi-no-repeat bgi-size-contain bgi-position-x-center bgi-position-y-bottom landing-dark-bg" style="background-image: url(assets/media/svg/illustrations/landing.svg)">
-        <!--begin::Header-->
-        <div class="landing-header" data-kt-sticky="true" data-kt-sticky-name="landing-header" data-kt-sticky-offset="{default: '200px', lg: '300px'}">
-            <!--begin::Container-->
-            <div class="container">
-                <!--begin::Wrapper-->
-                <div class="d-flex align-items-center justify-content-between">
-                    <!--begin::Logo-->
-                    <div class="d-flex align-items-center flex-equal">
-                        <!--begin::Mobile menu toggle-->
-                        <button class="btn btn-icon btn-active-color-primary me-3 d-flex d-lg-none" id="kt_landing_menu_toggle">
-                            <i class="ki-duotone ki-abstract-14 fs-2hx">
-                                <span class="path1"></span>
-                                <span class="path2"></span>
-                            </i>
-                        </button>
-                        <!--end::Mobile menu toggle-->
-                        <!--begin::Logo image-->
-                        <a href="landing.html">
-                            <img alt="Logo" src="assets/media/logos/landing.svg" class="logo-default h-25px h-lg-30px" />
-                            <img alt="Logo" src="assets/media/logos/landing-dark.svg" class="logo-sticky h-20px h-lg-25px" />
-                        </a>
-                        <!--end::Logo image-->
-                    </div>
-                    <!--end::Logo-->
-                    <!--begin::Menu wrapper-->
-                    <div class="d-lg-block" id="kt_header_nav_wrapper">
-                        <div class="d-lg-block p-5 p-lg-0" data-kt-drawer="true" data-kt-drawer-name="landing-menu" data-kt-drawer-activate="{default: true, lg: false}" data-kt-drawer-overlay="true" data-kt-drawer-width="200px" data-kt-drawer-direction="start" data-kt-drawer-toggle="#kt_landing_menu_toggle" data-kt-swapper="true" data-kt-swapper-mode="prepend" data-kt-swapper-parent="{default: '#kt_body', lg: '#kt_header_nav_wrapper'}">
-                            <!--begin::Menu-->
-                            <div class="menu menu-column flex-nowrap menu-rounded menu-lg-row menu-title-gray-600 menu-state-title-primary nav nav-flush fs-5 fw-semibold" id="kt_landing_menu">
-                                <!--begin::Menu item-->
-                                <div class="menu-item">
-                                    <!--begin::Menu link-->
-                                    <a class="menu-link nav-link active py-3 px-4 px-xxl-6" href="#kt_body" data-kt-scroll-toggle="true" data-kt-drawer-dismiss="true">Repair Services</a>
-                                    <!--end::Menu link-->
-                                </div>
-                                <!--end::Menu item-->
-                                <!--begin::Menu item-->
-                                <div class="menu-item">
-                                    <!--begin::Menu link-->
-                                    <a class="menu-link nav-link py-3 px-4 px-xxl-6" href="#how-it-works" data-kt-scroll-toggle="true" data-kt-drawer-dismiss="true">Sell Your Electronics</a>
-                                    <!--end::Menu link-->
-                                </div>
-                                <!--end::Menu item-->
-                                <!--begin::Menu item-->
-                                <div class="menu-item">
-                                    <!--begin::Menu link-->
-                                    <a class="menu-link nav-link py-3 px-4 px-xxl-6" href="#achievements" data-kt-scroll-toggle="true" data-kt-drawer-dismiss="true">Marketplace</a>
-                                    <!--end::Menu link-->
-                                </div>
-                                <!--end::Menu item-->
-                                <!--begin::Menu item-->
-                                <div class="menu-item">
-                                    <!--begin::Menu link-->
-                                    <a class="menu-link nav-link py-3 px-4 px-xxl-6" href="#team" data-kt-scroll-toggle="true" data-kt-drawer-dismiss="true">Login</a>
-                                    <!--end::Menu link-->
-                                </div>
-                                <!--end::Menu item-->
-                                <!--begin::Menu item-->
-                                <div class="menu-item">
-                                    <!--begin::Menu link-->
-                                    <a class="menu-link nav-link py-3 px-4 px-xxl-6" href="#portfolio" data-kt-scroll-toggle="true" data-kt-drawer-dismiss="true">Signup</a>
-                                    <!--end::Menu link-->
-                                </div>
-                                <!--end::Menu item-->
-
-                            </div>
-                            <!--end::Menu-->
-                        </div>
-                    </div>
-                    <!--end::Menu wrapper-->
-                    <!--begin::Toolbar-->
-                    <div class="flex-equal text-end ms-1">
-                        <a href="authentication/layouts/corporate/sign-in.html" class="btn btn-success">Become a Business Partner</a>
-                    </div>
-                    <!--end::Toolbar-->
-                </div>
-                <!--end::Wrapper-->
-            </div>
-            <!--end::Container-->
-        </div>
-        <!--end::Header-->
-       @yield("banner")
+<!-- topbar -->
+<div class="topbar">
+    <div class="shell topbar__inner">
+        <ul class="topbar__list">
+            <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg>
+                Reg. No. {{ config('org.reg_no') }}
+            </li>
+            <li class="topbar__sep">|</li>
+            <li>PAN {{ config('org.pan') }}</li>
+        </ul>
+        <ul class="topbar__list">
+            <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg>
+                <a href="mailto:{{ config('org.email') }}">{{ config('org.email') }}</a>
+            </li>
+            <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg>
+                <a href="tel:+{{ config('org.phone_e164') }}">{{ config('org.phone') }}</a>
+            </li>
+        </ul>
     </div>
-    <!--end::Wrapper-->
-    <!--begin::Curve bottom-->
-    @yield("curve")
-
-    <!--end::Curve bottom-->
 </div>
+<!-- /topbar -->
+
+<!-- header -->
+<header class="site-header">
+    <div class="shell">
+        <nav class="nav" aria-label="Main navigation">
+            <a class="brand" href="{{ route('index') }}">
+                <img src="{{ asset('front/img/logo-clcf-240.png') }}" alt="{{ config('org.name') }}">
+                <span class="brand__text">
+                    <span class="brand__name">Child Life Care Foundation</span>
+                    <span class="brand__tag">{{ config('org.tagline') }}</span>
+                </span>
+            </a>
+
+            <ul class="nav__menu" id="primary-menu">
+                <li><a href="{{ route('index') }}" class="{{ request()->routeIs('index') ? 'is-active' : '' }}">Home</a></li>
+                <li><a href="{{ route('about-us') }}" class="{{ request()->routeIs('about-us') ? 'is-active' : '' }}">About Us</a></li>
+                <li>
+                    <a href="{{ route('udaan') }}" class="{{ request()->routeIs(['udaan', 'medical-help']) ? 'is-active' : '' }}">
+                        Our Work
+                        <svg class="caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+                    </a>
+                    <ul class="submenu">
+                        <li><a href="{{ route('index') }}#food-programme">Food Programme</a></li>
+                        <li><a href="{{ route('udaan') }}">Udaan Free Learning Center</a></li>
+                        <li><a href="{{ route('medical-help') }}">Medical Support</a></li>
+                    </ul>
+                </li>
+                <li><a href="{{ route('gallery') }}" class="{{ request()->routeIs('gallery') ? 'is-active' : '' }}">Gallery</a></li>
+                <li><a href="{{ route('contact-us') }}" class="{{ request()->routeIs('contact-us') ? 'is-active' : '' }}">Contact Us</a></li>
+            </ul>
+
+            <div class="nav__cta">
+                <a class="btn btn--ghost btn--sm" href="{{ route('donation') }}">Ways to Give</a>
+                <a class="btn btn--accent" href="{{ config('org.donate_url') }}" target="_blank" rel="noopener">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 14c1.5-1.5 3-3.3 3-5.5A5.5 5.5 0 0 0 12 5.4 5.5 5.5 0 0 0 2 8.5c0 2.2 1.5 4 3 5.5l7 7z"/></svg>
+                    Donate Now
+                </a>
+                <button class="nav__toggle" type="button" aria-label="Menu" aria-expanded="false" aria-controls="primary-menu">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
+        </nav>
+        <p class="tax-note">Please share your address and PAN details after donating so that a donation e-receipt can be issued where applicable.</p>
+    </div>
+</header>
+<!-- /header -->

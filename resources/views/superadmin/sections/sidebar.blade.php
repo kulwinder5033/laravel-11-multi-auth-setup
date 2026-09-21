@@ -16,7 +16,22 @@
                                 <span class="path4"></span>
                             </i>
                         </span>
-                        <span class="menu-title">Dashboard</span>
+                        <span class="menu-title">Cases</span>
+                    </a>
+                    <!--end:Menu link-->
+                </div>
+                <div class="menu-item">
+                    <!--begin:Menu link-->
+                    <a class="menu-link {{ request()->is('superadmin/donors/*') ? 'active' : '' }}" href="{{ route("superadmin.donors.index") }}">
+                        <span class="menu-icon">
+                            <i class="ki-duotone ki-element-11 fs-2">
+                                <span class="path1"></span>
+                                <span class="path2"></span>
+                                <span class="path3"></span>
+                                <span class="path4"></span>
+                            </i>
+                        </span>
+                        <span class="menu-title">Donors</span>
                     </a>
                     <!--end:Menu link-->
                 </div>

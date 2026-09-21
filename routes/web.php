@@ -20,14 +20,21 @@ Route::get('privacy-policy', [IndexController::class, 'privacyPolicy'])->name('p
 # Contact Us Page Route
 Route::get('contact-us', [IndexController::class, 'contactUs'])->name('contact-us');
 
-# Repair Services Page Route
-Route::get('repair-services', [IndexController::class, 'repairServices'])->name('repair-services');
+# Medical Support Listing Page Route
+Route::get('medical-help', [IndexController::class, 'medicalHelp'])->name('medical-help');
 
-# Sell Your Electronics Page Route
-Route::get('sell-your-electronics', [IndexController::class, 'sellYourElectronics'])->name('sell-your-electronics');
+# Individual Medical Case Page Route
+Route::get('medical-help/{id}', [IndexController::class, 'caseDetail'])
+    ->whereNumber('id')
+    ->name('case-detail');
+
+# Udaan Free Learning Center Page Route
+Route::get("udaan-free-learning-center", [IndexController::class, "udaan"])->name("udaan");
 
 # Marketplace Page Route
-Route::get('marketplace', [IndexController::class, 'marketplace'])->name('marketplace');
+Route::get('gallery', [IndexController::class, 'gallery'])->name('gallery');
+
+Route::get('donation', [IndexController::class, 'donation'])->name('donation');
 
 # Customer Authentication Routes
 Auth::routes();

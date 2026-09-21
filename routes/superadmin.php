@@ -7,7 +7,9 @@ use App\Http\Controllers\Superadmin\Auth\LoginController;
 use App\Http\Controllers\Superadmin\Auth\MyAccountController;
 use App\Http\Controllers\Superadmin\Auth\RegisterController;
 use App\Http\Controllers\Superadmin\Auth\ResetPasswordController;
+use App\Http\Controllers\Superadmin\CaseController;
 use App\Http\Controllers\Superadmin\DashboardController;
+use App\Http\Controllers\Superadmin\DonorController;
 use App\Http\Controllers\Superadmin\Package\PackageController;
 use Illuminate\Support\Facades\Route;
 
@@ -46,7 +48,15 @@ Route::group(['prefix' => 'superadmin', 'as' => 'superadmin.'], function () {
     |--------------------------------------------------------------------------
     */
 
-    Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
+    Route::get('/', [CaseController::class, 'index'])->name('dashboard');
+
+        /*
+    |--------------------------------------------------------------------------
+    | Settings > My Account Route
+    |--------------------------------------------------------------------------
+    */
+    Route::resource('donors', DonorController::class);
+    Route::resource('cases', CaseController::class);
 
      /*
     |--------------------------------------------------------------------------
@@ -54,6 +64,7 @@ Route::group(['prefix' => 'superadmin', 'as' => 'superadmin.'], function () {
     |--------------------------------------------------------------------------
     */
     Route::resource('my-account', MyAccountController::class);
+    
 
     /*
     |--------------------------------------------------------------------------
