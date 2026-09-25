@@ -102,7 +102,7 @@
         <div class="shell">
             <div class="split">
                 <div class="frame frame--blob" data-reveal>
-                    <img src="{{ asset('front/img/home/children.jpg') }}" alt="Children supported by Child Life Care Foundation">
+                    <img src="{{ asset('front/img/home/about-collage.jpg') }}" alt="Children supported by Child Life Care Foundation">
                 </div>
                 <div data-reveal style="--d:100ms">
                     <span class="eyebrow">About Us</span>
@@ -211,7 +211,7 @@
 
             <div class="split">
                 <div class="frame" data-reveal>
-                    <img src="{{ asset('front/img/home/donate_food.jpeg') }}" alt="Meal distribution by Child Life Care Foundation">
+                    <img src="{{ asset('front/img/home/donate-birthday-poster.jpg') }}" alt="Donate Food on Your Birthday - Child Life Care Foundation">
                 </div>
 
                 <div data-reveal style="--d:100ms">
